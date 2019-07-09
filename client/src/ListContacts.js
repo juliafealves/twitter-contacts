@@ -1,48 +1,77 @@
-import React, { Component } from 'react';
-import PropTypes            from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class ListContacts extends Component {
-    static propTypes = {
-        contacts: PropTypes.array.isRequired,
-        onRemoveContact: PropTypes.func.isRequired
-    };
+  static propTypes = {
+    contacts: PropTypes.array.isRequired,
+    onRemoveContact: PropTypes.func.isRequired
+  };
 
-    state = {
-        query: ''
-    };
+  state = {
+    query: ""
+  };
 
-    updateChange = query => {
-        this.setState(() => ({
-            query: query.trim()
-        }));
-    };
+  updateChange = query => {
+    this.setState(() => ({
+      query: query.trim()
+    }));
+  };
 
-    render() {
-        return (
-            <div className='list-contacts'>
-                {JSON.stringify(this.state.query)}
-                <div className='list-contacts-top'>
-                    <input type="text" className='search-contacts' placeholder='Search contacts'
-                           value={this.state.query} onChange={event => this.updateChange(event.target.value)}/>
-                </div>
-                <ol>
-                    {this.props.contacts.map(contact => (
-                        <li key={contact.id} className='contact-list-item'>
-                            <div className='contact-avatar' style={{ backgroundImage: `url(${contact.avatarURL})` }}>
-                            </div>
-                            <div className='contact-details'>
-                                <p>{contact.name}</p>
-                                <p>{contact.handle}</p>
-                            </div>
-                            <button className='contact-remove'
-                                    onClick={() => this.props.onRemoveContact(contact)}>Remove
-                            </button>
-                        </li>
-                    ))}
-                </ol>
-            </div>
-        );
-    }
+  clearQuery = () => this.updateChange("");
+
+  render() {
+    const { query } = this.state;
+    const { contacts, onRemoveContact } = this.props;
+
+    const showingContacts =
+      query === ""
+        ? contacts
+        : contacts.filter(contact =>
+            contact.name.toLowerCase().includes(query.toLowerCase())
+          );
+
+    return (
+      <div className="list-contacts">
+        <div className="list-contacts-top">
+          <input
+            type="text"
+            className="search-contacts"
+            placeholder="Search contacts"
+            value={query}
+            onChange={event => this.updateChange(event.target.value)}
+          />
+        </div>
+        {showingContacts.length !== contacts.length && (
+          <div className="showing-contacts">
+            <span>
+              Now showing {showingContacts.length} of {contacts.length}
+            </span>
+            <button onClick={this.clearQuery}>Show all</button>
+          </div>
+        )}
+        <ol className="contact-list">
+          {showingContacts.map(contact => (
+            <li key={contact.id} className="contact-list-item">
+              <div
+                className="contact-avatar"
+                style={{ backgroundImage: `url(${contact.avatarURL})` }}
+              />
+              <div className="contact-details">
+                <p>{contact.name}</p>
+                <p>{contact.handle}</p>
+              </div>
+              <button
+                className="contact-remove"
+                onClick={() => onRemoveContact(contact)}
+              >
+                Remove
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+    );
+  }
 }
 
 export default ListContacts;
