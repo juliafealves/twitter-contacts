@@ -31,9 +31,6 @@ class App extends Component {
           <ListContacts
             contacts={this.state.contacts}
             onRemoveContact={this.removeContact}
-            onNavegate={() => {
-              this.setState(_ => ({ screen: "create" }));
-            }}
           />
         )}
         {this.state.screen === "create" && <CreactContact />}
