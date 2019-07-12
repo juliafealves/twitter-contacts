@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import ListContacts from "./ListContacts";
 import * as ContactAPI from "./utils/ContactsAPI";
-import CreactContact from "./CreateContact";
+import CreateContact from "./CreateContact";
 
 class App extends Component {
   state = {
@@ -37,7 +37,7 @@ class App extends Component {
             />
           )}
         />
-        <Route path="/create" component={CreactContact} />
+        <Route path="/create" component={CreateContact} />
       </div>
     );
   }
