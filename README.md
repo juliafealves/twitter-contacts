@@ -3,14 +3,14 @@
 
 ## Screens
 
-![Screen List Contacts]()
+![Screen List Contacts](screen_list.png)
 
-![Screen Create Contacts]()
+![Screen Create Contacts](screen_create.png)
 
 ## Resources used:
 
-- [React Route]()
-- [PropTypes]()
-- [form-serialize]()
-- [create-react-app]()
-- [Contact API]()
+- [React Router](https://reacttraining.com/react-router/)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+- [form-serialize](https://www.npmjs.com/package/form-serialize)
+- [create-react-app](https://facebook.github.io/create-react-app/)
+- [Contact API](https://github.com/udacity/reactnd-contacts-server2)
