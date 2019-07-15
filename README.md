@@ -1,5 +1,5 @@
 # :bird: Twitter Contacts
-:bird: Development of a small application for managing Twitter contacts. Based on the fundamentals in React from Udacity.
+> Development of a small application for managing Twitter contacts. Based on the fundamentals in React from Udacity.
 
 ## Screens
 
