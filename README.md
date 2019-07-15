@@ -14,7 +14,7 @@
 You must have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node/npm](https://nodejs.org/en/download/) installed on your localhost.
 
 ```
-git clone 
+git clone https://github.com/juliafealves/twitter-contacts.git
 ```
 
 ### Back-end (Node)
