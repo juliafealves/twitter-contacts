@@ -4,8 +4,10 @@
 ## Screens
 
 ![Screen List Contacts](screen_list.png)
+> List all contacts.
 
 ![Screen Create Contacts](screen_create.png)
+> Create a new contact.
 
 ## Resources used:
 
