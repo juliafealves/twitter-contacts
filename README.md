@@ -1,5 +1,5 @@
 # :bird: Twitter Contacts
-> Development of a small application for managing Twitter contacts. Based on the fundamentals in React from Udacity.
+> Development of a small application for managing Twitter contacts. Based on the Fundamentals in React from Udacity.
 
 ## Screens
 
@@ -8,6 +8,30 @@
 
 ![Screen Create Contacts](screen_create.png)
 > Create a new contact.
+
+## How to execute?
+
+You must have [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Node/npm](https://nodejs.org/en/download/) installed on your localhost.
+
+```
+git clone 
+```
+
+### Back-end (Node)
+
+```shell
+cd server
+npm i
+node server.js
+```
+
+### Front-end (React)
+
+```shell
+cd client
+npm i
+npm start
+```
 
 ## Resources used:
 
